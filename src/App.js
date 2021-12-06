@@ -98,6 +98,7 @@ const App = () => {
 
   return (
     <Flex direction="column" minH="100vh" justifyContent="space-between">
+      {/* header */}
       <Flex
         w="full"
         bg={useColorModeValue("white", "gray")}
@@ -139,6 +140,7 @@ const App = () => {
         />
       </Flex>
 
+      {/* main */}
       <Flex
         mt={{ base: "400px", md: "220px" }}
         w="full"
@@ -155,9 +157,10 @@ const App = () => {
         />
       </Flex>
 
+      {/* footer */}
       <Flex
         as="footer"
-        bg="cyan.100"
+        bg={useColorModeValue("cyan.200", "cyan.500")}
         justifyContent="center"
         align="center"
         p={4}

@@ -1,16 +1,29 @@
-import { Box, Flex, Checkbox, Text, IconButton } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Checkbox,
+  Text,
+  IconButton,
+  useColorMode,
+} from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
 
 const Todo = ({ todo, toggleTodoFinished, deleteTodo }) => {
+  const { colorMode } = useColorMode();
   let bg;
   if (todo.type === 1) {
-    bg = "lightgreen";
+    bg = "green";
   } else if (todo.type === 2) {
-    bg = "lightblue";
+    bg = "blue";
   } else if (todo.type === 3) {
-    bg = "lightyellow";
+    bg = "yellow";
   } else if (todo.type === 4) {
     bg = "pink";
+  }
+  if (colorMode === "light") {
+    bg = bg + ".200";
+  } else if (colorMode === "dark") {
+    bg = bg + ".500";
   }
 
   let textDecorationLine;
