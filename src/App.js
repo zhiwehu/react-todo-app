@@ -116,7 +116,7 @@ const App = () => {
           w="full"
           bgGradient="linear(to-r, cyan.200, purple.500)"
         >
-          <Heading color={useColorModeValue("white", "black")} as="h1">
+          <Heading color={useColorModeValue("black", "white")} as="h1">
             Another Todo App
           </Heading>
           <IconButton
