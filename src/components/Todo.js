@@ -28,7 +28,6 @@ const Todo = ({ todo, toggleTodoFinished, deleteTodo }) => {
       p={4}
       align="center"
       justifyContent="space-between"
-      boxShadow="lg"
     >
       <Checkbox
         defaultIsChecked={todo.finished}

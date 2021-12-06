@@ -143,6 +143,7 @@ const App = () => {
         bg="cyan.100"
         align="center"
         justifyContent="center"
+        boxShadow="lg"
         p={4}
       >
         <Heading as="h1">Another Todo App</Heading>
