@@ -142,7 +142,7 @@ const App = () => {
 
       {/* main */}
       <Flex
-        mt={{ base: "400px", md: "220px" }}
+        mt={{ base: "240px", md: "200px" }}
         w="full"
         direction="column"
         as="main"

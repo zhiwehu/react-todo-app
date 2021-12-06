@@ -4,11 +4,12 @@ const FilterTodos = ({ todoTypeFilter, onTodoTypeFilterChange }) => {
   return (
     <RadioGroup value={todoTypeFilter} onChange={onTodoTypeFilterChange}>
       <Stack
-        p={4}
+        pb={4}
         align="center"
         justifyContent="center"
         spacing={4}
-        direction={{ base: "column", md: "row" }}
+        flexWrap="wrap"
+        direction="row"
       >
         <Radio size="lg" value="0">
           <Badge fontSize="lg">全部</Badge>
