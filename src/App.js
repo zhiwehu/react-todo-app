@@ -1,6 +1,14 @@
 import { useState, useEffect } from "react";
 import { v4 as uuid4 } from "uuid";
-import { Flex, Heading, Text } from "@chakra-ui/react";
+import {
+  IconButton,
+  Flex,
+  Heading,
+  Text,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 import AddTodo from "./components/AddTodo";
 import FilterTodos from "./components/FilterTodos";
@@ -34,6 +42,7 @@ const App = () => {
     },
   ];
 
+  const { colorMode, toggleColorMode } = useColorMode();
   const [todoTypeFilter, setTodoTypeFilter] = useState("0");
   const [todoTitle, setTodoTitle] = useState("");
   const [todoType, setTodoType] = useState(1);
@@ -91,7 +100,7 @@ const App = () => {
     <Flex direction="column" minH="100vh" justifyContent="space-between">
       <Flex
         w="full"
-        bg="white"
+        bg={useColorModeValue("white", "gray")}
         direction="column"
         zIndex={100}
         position="fixed"
@@ -101,14 +110,18 @@ const App = () => {
         boxShadow="lg"
       >
         <Flex
-          justify="center"
+          justify="space-between"
           p={4}
           w="full"
           bgGradient="linear(to-r, cyan.200, purple.500)"
         >
-          <Heading color="white" as="h1">
+          <Heading color={useColorModeValue("white", "black")} as="h1">
             Another Todo App
           </Heading>
+          <IconButton
+            onClick={toggleColorMode}
+            icon={colorMode === "light" ? <SunIcon /> : <MoonIcon />}
+          />
         </Flex>
 
         <AddTodo
