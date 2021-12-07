@@ -76,7 +76,11 @@ const AddTodo = ({
                 onKeyPress={todoTitleOnKeyPress}
                 onChange={todoTitleOnChange}
               />
-              <Select size="lg" onChange={todoTypeOnChange}>
+              <Select
+                size="lg"
+                onChange={todoTypeOnChange}
+                onKeyPress={todoTitleOnKeyPress}
+              >
                 <option value="1">不重要不紧急</option>
                 <option value="2">重要</option>
                 <option value="3">紧急</option>
