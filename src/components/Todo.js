@@ -38,11 +38,12 @@ const Todo = ({ todo, toggleTodoFinished, deleteTodo }) => {
   return (
     <MotionBox
       whileHover={{
-        rotate: -5,
+        rotate: -3,
       }}
       whileTap={{
-        scale: 0.9,
+        scale: 0.95,
       }}
+      onDoubleClick={() => toggleTodoFinished(todo.id)}
       borderRadius="lg"
       as={Flex}
       bg={bg}
