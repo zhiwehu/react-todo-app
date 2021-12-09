@@ -7,6 +7,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
+import { motion } from "framer-motion";
 
 const Todo = ({ todo, toggleTodoFinished, deleteTodo }) => {
   const { colorMode } = useColorMode();
@@ -32,8 +33,16 @@ const Todo = ({ todo, toggleTodoFinished, deleteTodo }) => {
   } else {
     textDecorationLine = "none";
   }
+
+  const MotionBox = motion(Box);
   return (
-    <Box
+    <MotionBox
+      whileHover={{
+        rotate: -5,
+      }}
+      whileTap={{
+        scale: 0.9,
+      }}
       borderRadius="lg"
       as={Flex}
       bg={bg}
@@ -54,7 +63,7 @@ const Todo = ({ todo, toggleTodoFinished, deleteTodo }) => {
         variant="none"
         icon={<DeleteIcon />}
       />
-    </Box>
+    </MotionBox>
   );
 };
 
